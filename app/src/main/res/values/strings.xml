@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Veya</string>
+    <string name="veya_subtitle">Smart Hydration</string>
+    <string name="veya_headline">Stay hydrated\nwithout thinking\nabout it.</string>
+    <string name="veya_description">Monitorea tu hidratación en tiempo real sincronizando tu botella inteligente con un solo toque.</string>
+    <string name="btn_empezar">Empezar</string>
+    <string name="veya_copyright">2026 Veya Inc. Todos los derechos reservados.</string>
+
+    <!-- Dashboard -->
+    <string name="dashboard_title">Panel Veya</string>
+    <string name="dashboard_subtitle">Control inteligente de tu hidratación diaria</string>
+    <string name="module_bottle_title">Mi Botella</string>
+    <string name="module_bottle_desc">Sincronización bluetooth, batería y sensor.</string>
+    <string name="module_hydration_title">Hidratación</string>
+    <string name="module_hydration_desc">Metas del día, mililitros y tomas registradas.</string>
+    <string name="module_store_title">Tienda Oficial</string>
+    <string name="module_store_desc">Accesorios, tapas y bases de carga magnética.</string>
+    <string name="module_reports_title">Estadísticas</string>
+    <string name="module_reports_desc">Reportes de hábitos e ingesta semanal.</string>
+
+    <string name="volver">Volver</string>
+    <string name="terminos_veya_titulo">Términos y Privacidad</string>
+    <string name="terminos_veya_subtitulo">Uso del dispositivo y sincronización de datos</string>
+    <string name="terminos_veya_cuerpo">Bienvenido a Veya Smart Bottle. Al vincular tu botella mediante Bluetooth, aceptas el registro automático de tu ingesta diaria para generar reportes y recomendaciones de bienestar.</string>
+    <string name="btn_entendido">Entendido y Volver</string>
+    <string name="title_activity_dashboard">DashboardActivity</string>
+    <string name="title_activity_terminos">TerminosActivity</string>
+    <string name="title_activity_productos">ProductosActivity</string>
+</resources>
