@@ -141,7 +141,10 @@ fun DashboardScreen(
                 ) { module ->
                     Card(
                         onClick = {
-                            val intent = Intent(context, ProductosActivity::class.java)
+                            val intent = when (module.titulo) {
+                                R.string.module_hydration_title -> Intent(context, VeyaComponents::class.java)
+                                else -> Intent(context, ProductosActivity::class.java)
+                            }
                             context.startActivity(intent)
                         },
                         shape = RoundedCornerShape(16.dp),
