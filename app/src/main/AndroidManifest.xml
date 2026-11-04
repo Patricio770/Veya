@@ -13,7 +13,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Veya">
-
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -26,26 +25,32 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".DashboardActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".TerminosActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".ProductosActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".VeyaComponents"
             android:exported="false" />
-
+        <activity
+            android:name=".EstadisticasActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Veya"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".VeyaTopBar.kt"
+            android:exported="false"
+            android:label="@string/title_activity_veya_top_bar.kt"
+            android:theme="@style/Theme.Veya"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>
