@@ -3,33 +3,67 @@ package com.cristian.veya
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.*
-import androidx.compose.runtime.*
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.cristian.veya.ui.theme.VeyaBackground
+import com.cristian.veya.ui.theme.VeyaDark
+import com.cristian.veya.ui.theme.VeyaPrimary
+import com.cristian.veya.ui.theme.VeyaTheme
+import com.cristian.veya.ui.theme.VeyaWhite
 import kotlinx.coroutines.launch
 
 class ProductosActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContent {
-            ProductosScreen()
+            VeyaTheme {
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = VeyaBackground
+                ) {
+                    ProductosScreen(onBackClick = { finish() })
+                }
+            }
         }
     }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ProductosScreen() {
+fun ProductosScreen(onBackClick: () -> Unit) {
     var productos by remember { mutableStateOf<List<Producto>>(emptyList()) }
     var cargando by remember { mutableStateOf(true) }
     var errorMensaje by remember { mutableStateOf<String?>(null) }
@@ -50,26 +84,23 @@ fun ProductosScreen() {
 
     Scaffold(
         topBar = {
-            TopAppBar(
-                title = { Text("Catálogo Veya", fontWeight = FontWeight.Bold) },
-                colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = Color(0xFF1B3B36),
-                    titleContentColor = Color.White
-                )
+            VeyaTopBar(
+                title = "Catálogo Veya",
+                onBackClick = onBackClick
             )
-        }
+        },
+        containerColor = VeyaBackground
     ) { padding ->
         Box(
             modifier = Modifier
                 .fillMaxSize()
-                .background(Color(0xFFF7F9F9))
                 .padding(padding)
         ) {
             when {
                 cargando -> {
                     CircularProgressIndicator(
                         modifier = Modifier.align(Alignment.Center),
-                        color = Color(0xFF1B3B36)
+                        color = VeyaPrimary
                     )
                 }
                 errorMensaje != null -> {
@@ -103,7 +134,7 @@ fun ProductoItemCard(p: Producto) {
     Card(
         modifier = Modifier.fillMaxWidth(),
         shape = RoundedCornerShape(16.dp),
-        colors = CardDefaults.cardColors(containerColor = Color.White),
+        colors = CardDefaults.cardColors(containerColor = VeyaWhite),
         elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
@@ -116,13 +147,13 @@ fun ProductoItemCard(p: Producto) {
                     text = p.nombre,
                     fontSize = 16.sp,
                     fontWeight = FontWeight.Bold,
-                    color = Color(0xFF1B3B36)
+                    color = VeyaDark
                 )
                 Text(
                     text = "S/ ${p.precio}",
                     fontSize = 15.sp,
                     fontWeight = FontWeight.ExtraBold,
-                    color = Color(0xFF2E7D32)
+                    color = VeyaPrimary
                 )
             }
 

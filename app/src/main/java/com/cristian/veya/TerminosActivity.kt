@@ -36,7 +36,6 @@ import com.cristian.veya.ui.theme.AppTheme
 import com.cristian.veya.ui.theme.VeyaBackground
 import com.cristian.veya.ui.theme.VeyaDark
 import com.cristian.veya.ui.theme.VeyaPrimary
-import com.cristian.veya.ui.theme.VeyaTextSecondary
 import com.cristian.veya.ui.theme.VeyaTheme
 import com.cristian.veya.ui.theme.VeyaWhite
 
@@ -50,11 +49,7 @@ class TerminosActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = VeyaBackground
                 ) {
-                    TerminosScreen(
-                        onCerrarClick = {
-                            finish()
-                        }
-                    )
+                    TerminosScreen(onCerrarClick = { finish() })
                 }
             }
         }
@@ -69,6 +64,10 @@ fun TerminosScreen(
     Scaffold(
         containerColor = VeyaBackground,
         topBar = {
+            VeyaTopBar(
+                title = "Términos y Privacidad",
+                onBackClick = onCerrarClick
+            )
             TopAppBar(
                 title = {
                     Text(

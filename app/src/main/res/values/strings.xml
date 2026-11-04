@@ -26,4 +26,7 @@
     <string name="title_activity_dashboard">DashboardActivity</string>
     <string name="title_activity_terminos">TerminosActivity</string>
     <string name="title_activity_productos">ProductosActivity</string>
+    <string name="title_activity_estadisticas">EstadisticasActivity</string>
+    <string name="title_activity_estadisticas_activity.kt">EstadisticasActivity.kt</string>
+    <string name="title_activity_veya_top_bar.kt">VeyaTopBar.kt</string>
 </resources>
