@@ -13,6 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Veya">
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -34,22 +35,31 @@
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".ProductosActivity"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
             android:name=".VeyaComponents"
             android:exported="false" />
         <activity
-            android:name=".EstadisticasActivity"
+            android:name=".screens.productos.ProductosActivity"
             android:exported="false"
-            android:theme="@style/Theme.Veya"
             android:windowSoftInputMode="adjustResize" />
         <activity
-            android:name=".VeyaTopBar.kt"
+            android:name=".screens.productos.ProductoDetalleActivity"
             android:exported="false"
-            android:label="@string/title_activity_veya_top_bar.kt"
-            android:theme="@style/Theme.Veya"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".screens.mapa.PuntosVeyaActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".screens.estadisticas.EstadisticasActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".screens.estadisticas.CentroVeyaActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".screens.botella.VincularBotellaActivity"
+            android:exported="false"
             android:windowSoftInputMode="adjustResize" />
     </application>
 

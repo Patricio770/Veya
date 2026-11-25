@@ -29,4 +29,22 @@
     <string name="title_activity_estadisticas">EstadisticasActivity</string>
     <string name="title_activity_estadisticas_activity.kt">EstadisticasActivity.kt</string>
     <string name="title_activity_veya_top_bar.kt">VeyaTopBar.kt</string>
+    <string name="title_activity_producto">Producto</string>
+    <string name="title_activity_producto.kt">Producto.kt</string>
+    <string name="title_activity_puntos_vega">PuntosVega</string>
+    <string name="title_activity_estadistica_dia">EstadisticaDia</string>
+    <string name="title_activity_veya_api_service.kt">VeyaApiService.kt</string>
+    <string name="title_activity_retrofit_client">RetrofitClient</string>
+    <string name="title_activity_veya_repository">VeyaRepository</string>
+    <string name="title_activity_productos_uistate">ProductosUIState</string>
+    <string name="title_activity_productos_view_model">ProductosViewModel</string>
+    <string name="title_activity_producto_item">ProductoItem</string>
+    <string name="title_activity_producto_detalle">ProductoDetalleActivity</string>
+    <string name="title_activity_puntos_uistate">PuntosUIState</string>
+    <string name="title_activity_puntos_view_model">PuntosViewModel</string>
+    <string name="title_activity_puntos_veya">PuntosVeyaActivity</string>
+    <string name="title_activity_estadisticas_uistate">EstadisticasUIState</string>
+    <string name="title_activity_estadisticas_view_model">EstadisticasViewModel</string>
+    <string name="title_activity_centro_veya">CentroVeyaActivity</string>
+    <string name="title_activity_vincular_botella">VincularBotellaActivity</string>
 </resources>

@@ -72,6 +72,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.compose.ui.zIndex
+import com.cristian.veya.screens.botella.VincularBotellaActivity
+import com.cristian.veya.screens.estadisticas.CentroVeyaActivity
+import com.cristian.veya.screens.estadisticas.EstadisticasActivity
+import com.cristian.veya.screens.productos.ProductosActivity
 import com.cristian.veya.ui.theme.AppTheme
 import com.cristian.veya.ui.theme.VeyaBackground
 import com.cristian.veya.ui.theme.VeyaDark
@@ -94,7 +98,7 @@ private val dashboardModules = listOf(
         titulo = R.string.module_bottle_title,
         descripcion = R.string.module_bottle_desc,
         icon = Icons.Outlined.Bluetooth,
-        targetActivity = TerminosActivity::class.java
+        targetActivity = VincularBotellaActivity::class.java
     ),
     DashboardModule(
         titulo = R.string.module_hydration_title,
@@ -260,7 +264,7 @@ fun DashboardScreen() {
                                     } else {
                                         Toast.makeText(
                                             context,
-                                            "Módulo de reportes en desarrollo",
+                                            "Módulo en desarrollo",
                                             Toast.LENGTH_SHORT
                                         ).show()
                                     }
@@ -275,6 +279,9 @@ fun DashboardScreen() {
                 Spacer(modifier = Modifier.height(8.dp))
 
                 Card(
+                    onClick = {
+                        context.startActivity(Intent(context, CentroVeyaActivity::class.java))
+                    },
                     shape = RoundedCornerShape(16.dp),
                     colors = CardDefaults.cardColors(containerColor = VeyaWhite),
                     elevation = CardDefaults.cardElevation(defaultElevation = 2.dp),
@@ -291,19 +298,19 @@ fun DashboardScreen() {
                     ) {
                         Column {
                             Text(
-                                text = "Veya Smart Bottle",
+                                text = "Ecosistema Veya",
                                 fontSize = 15.sp,
                                 fontWeight = FontWeight.Bold,
                                 color = VeyaDark
                             )
                             Text(
-                                text = "Sincronizado hace 5 min",
+                                text = "Puntos de recarga, Bluetooth y garantía",
                                 fontSize = 12.sp,
                                 color = VeyaTextSecondary
                             )
                         }
                         Text(
-                            text = "85% Batería",
+                            text = "Explorar →",
                             fontSize = 13.sp,
                             fontWeight = FontWeight.SemiBold,
                             color = VeyaPrimary
